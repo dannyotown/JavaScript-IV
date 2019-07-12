@@ -17,11 +17,11 @@ class Instructor extends Person{
         this.favLanguage = attributes.favLanguage;
         this.catchPhrase = attributes.catchPhrase;
     }
-    demo(){
-        return `Today we are learning about ${this.specialty}`;
+    demo(subject){
+        return `Today we are learning about ${subject}`;
     }
-    grade(){
-        return `${this.name} recieves a perfect score on ${this.specialty}`;
+    grade(student, subject){
+        return `${student.name} recieves a perfect score on ${subject}`;
     }
 }
 
@@ -41,5 +41,18 @@ class Student extends Person{
     }
     sprintChallenge(arg){
         console.log(`${this.name} has begun sprint challenge on ${arg}`);
+    }
+}
+class ProjectManager extends Person{
+    constructor(attributes){
+        super(attributes)
+        this.gradClassName = attributes.gradClassName;
+        this.favInstructor = attributes.favInstructor;
+    }
+    standUp(channel){
+        return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+    debugsCode(Student,subject){
+        return `${Student.name}'s code on ${subject}`;
     }
 }
